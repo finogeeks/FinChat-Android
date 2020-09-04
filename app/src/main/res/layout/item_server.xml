@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_click"
+    android:orientation="vertical"
+    android:paddingEnd="0dp"
+    android:paddingStart="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="9dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="9dp"
+            android:src="@drawable/sdk_login_setting_selected"
+            android:visibility="invisible"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@+id/icon"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/color_333333"
+            android:textSize="17sp"
+            tools:text="服务器名字服务器名字服务器名字服务器名字服务器名字" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_d9d9d9" />
+</LinearLayout>

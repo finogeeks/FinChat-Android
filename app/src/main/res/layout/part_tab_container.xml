@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@null"
+    android:gravity="center">
+
+    <com.finogeeks.finochatapp.views.TabIconView
+        android:id="@+id/iv_tab_icon"
+        android:layout_width="30dp"
+        android:layout_height="28dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-1dp"
+        android:scaleType="centerInside" />
+
+    <com.finogeeks.utility.views.BadgeView
+        android:id="@+id/tv_tab_badge"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:layout_alignEnd="@+id/iv_tab_icon"
+        android:layout_alignTop="@+id/iv_tab_icon"
+        android:layout_marginEnd="-11dp"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLength="2"
+        android:textColor="@color/color_ffffff"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_tab_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_tab_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2.5dp"
+        android:textColor="@color/tab_text_color_normal"
+        android:textSize="12sp" />
+</RelativeLayout>

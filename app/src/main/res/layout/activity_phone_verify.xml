@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="18dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="6dp"
+        android:onClick="setCancel"
+        android:paddingStart="6dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="6dp"
+        android:text="@string/cancel"
+        android:textColor="@color/selector_text"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="29dp"
+        android:includeFontPadding="false"
+        android:text="手机号验证"
+        android:textColor="#36455d"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:includeFontPadding="false"
+        android:text="@string/phone_number"
+        android:textColor="#36455d"
+        android:textSize="12sp" />
+
+    <com.finogeeks.utility.views.ClearableEditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:digits="0123456789"
+        android:hint="@string/please_input_11_phone_number"
+        android:includeFontPadding="false"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:textColorHint="#b4bcca"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="11dp"
+        android:background="#eaeaea" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="26dp"
+        android:includeFontPadding="false"
+        android:text="@string/verify_code"
+        android:textColor="#36455d"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.finogeeks.utility.views.ClearableEditText
+            android:id="@+id/code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@+id/divider"
+            android:background="@null"
+            android:hint="@string/please_input_6_code"
+            android:includeFontPadding="false"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColorHint="#b4bcca"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0.5dp"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/request_captcha"
+            android:background="#eaeaea" />
+
+        <TextView
+            android:id="@+id/request_captcha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:enabled="false"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:paddingStart="10dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="3dp"
+            android:text="@string/request_code"
+            android:textColor="@color/selector_captcha"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="11dp"
+        android:background="#eaeaea" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/selector_button_confirm"
+        android:enabled="false"
+        android:text="@string/finoapp_next_step"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+</LinearLayout>

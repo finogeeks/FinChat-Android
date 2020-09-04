@@ -1,0 +1,33 @@
+<resources>
+    <!-- LoginActivity -->
+    <string name="login">登录</string>
+    <string name="password">密码</string>
+
+    <!-- HomeActivity -->
+    <string name="tab_main_title_message">消息</string>
+    <string name="tab_main_contact">通讯录</string>
+    <string name="tab_main_title_work">工作</string>
+    <string name="tab_main_title_me">我</string>
+    <string name="please_input_11_phone_number">请输入11位手机号</string>
+    <string name="phone_number">手机号</string>
+    <string name="please_input_6_code">请输入6位验证码</string>
+    <string name="verify_code">验证码</string>
+    <string name="request_code">发送验证码</string>
+    <string name="confirm">确认</string>
+    <string name="username">用户名</string>
+    <string name="register">注册</string>
+    <string name="reset_confirm">确认修改</string>
+
+    <!-- BadgeView -->
+    <string name="ellipses">"…"</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="phone_rapid_register">快速注册</string>
+    <string name="connecting">连接中…</string>
+    <string name="fc_user_protocol">《FinChat用户使用协议》</string>
+    <string name="fc_register_accept">我已阅读并同意</string>
+    <string name="fc_scan">扫一扫</string>
+    <string name="applet">小程序</string>
+    <string name="channel">频道</string>
+    <string name="verify_and_save">验证并保存</string>
+    <string name="finoapp_next_step">下一步</string>
+</resources>
