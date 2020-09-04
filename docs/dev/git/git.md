@@ -1,10 +1,10 @@
 # 注意事项
 
-这里列举的注意事项主要是为了能让FinChat-Desktop的git log保持干净，也就是所谓的保持线性。比如运行`git log --graph`，能得到如下的结果
+这里列举的注意事项主要是为了能让FinChat-Android的git log保持干净，也就是所谓的保持线性。比如运行`git log --graph`，能得到如下的结果
 
 <img src="git_clean.jpg" alt="git clean log" width="300px">
 
-为了达到这个结果，我们使用[`Rebasing/Cherry-Picking Workflow`](https://git-scm.com/book/en/v2/Distributed-Git-Maintaining-a-Project)来管理FinChat-Desktop，需要在开发和发布中注意如下的事项
+为了达到这个结果，我们使用[`Rebasing/Cherry-Picking Workflow`](https://git-scm.com/book/en/v2/Distributed-Git-Maintaining-a-Project)来管理FinChat-Android，需要在开发和发布中注意如下的事项
 
 ## 开发中的注意实现
 
@@ -28,7 +28,7 @@
 
 ### 发布流程
 
-FinChat-Desktop的发布流程与`git flow`比较类似：
+FinChat-Android的发布流程与`git flow`比较类似：
 
 * 下图中，从上到下，分支的稳定性依次降低。比如master的稳定性比release_xxx更高
   * 原则上master分支不走开发流程
