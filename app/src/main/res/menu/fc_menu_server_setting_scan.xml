@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itemScan"
+        android:actionLayout="@layout/fc_menu_server_setting_scan"
+        android:title="@string/fc_scan"
+        app:showAsAction="always" />
+</menu>

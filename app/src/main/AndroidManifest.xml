@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.finogeeks.finochatapp">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <application
+        android:name=".FinoChatApplication"
+        android:icon="${app_icon}"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="${network_security_config}"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label,android:theme">
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="${amap_api_key}" />
+
+        <activity
+            android:name=".modules.login.SplashActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".modules.login.LoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".modules.home.HomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".modules.login.ResetPasswordActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="重置密码"
+            android:parentActivityName=".modules.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
+
+        <activity
+            android:name=".modules.server.view.ServerSettingActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".modules.server.view.ServerSelectingActivity"
+            android:label="选择服务器"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.TransParent">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="sdksample" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".modules.login.PhoneVerifyActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".modules.login.PhoneRegisterActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name="com.finogeeks.auth.RedirectUriReceiverActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${finAuthHost}"
+                    android:path="${finAuthPath}"
+                    android:scheme="${finAuthScheme}" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.finogeeks.auth.WebViewActivity"
+            android:theme="@style/FinAuthWebViewTheme">
+            <meta-data
+                android:name="FinAuthHost"
+                android:value="${finAuthHost}" />
+            <meta-data
+                android:name="FinAuthPath"
+                android:value="${finAuthPath}" />
+            <meta-data
+                android:name="FinAuthScheme"
+                android:value="${finAuthScheme}" />
+        </activity>
+
+        <activity
+            android:name=".modules.AuthActivity"
+            android:label="授权管理"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".modules.login.BindActivity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+
+        <!--请替换aaaa为应用在开放平台申请的app_key-->
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="aaaa" />
+
+        <!--请替换bbbb为应用在开放平台申请的app_id-->
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="bbbb" />
+    </application>
+</manifest>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/sdk_message_nav_ic_plus"
+    android:tint="?attr/NAV_TP_color_normal" />

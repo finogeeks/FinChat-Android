@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/FinoTheme.Toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:ems="2"
+            android:text="名称"
+            android:textColor="@color/color_333333"
+            android:textSize="17sp" />
+
+        <com.finogeeks.utility.views.ClearableEditText
+            android:id="@+id/etServerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入名称"
+            android:inputType="text"
+            android:maxLength="26"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColorHint="@color/color_d9d9d9" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/color_d9d9d9" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:ems="2"
+            android:text="URL"
+            android:textColor="@color/color_333333"
+            android:textSize="17sp" />
+
+        <com.finogeeks.utility.views.ClearableEditText
+            android:id="@+id/etServerUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入URL"
+            android:inputType="textUri"
+            android:maxLength="80"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColorHint="@color/color_d9d9d9" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/selector_button_confirm"
+        android:enabled="false"
+        android:text="@string/verify_and_save"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+</LinearLayout>

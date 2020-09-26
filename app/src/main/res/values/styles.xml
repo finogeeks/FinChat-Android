@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="FinoTheme.Base">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">?attr/Primary_color</item>
+        <item name="colorPrimaryDark">?attr/Primary_dark_color</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+    </style>
+
+    <style name="AppTheme.Splash" parent="FinoTheme.FullScreen">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="FinAuthWebViewTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

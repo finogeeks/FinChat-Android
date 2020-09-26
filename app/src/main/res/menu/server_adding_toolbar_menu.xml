@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home_toolbar_menu_item_create_chat"
+        android:icon="@drawable/home_toolbar_menu_item_create_chat_tint"
+        android:title="@string/home_toolbar_menu_item_create_chat"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,73 @@
+<com.finogeeks.utility.views.FinDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/home_toolbar"
+            style="@style/FinoTheme.Toolbar"
+            android:layout_alignParentTop="true">
+
+            <RelativeLayout
+                android:id="@+id/rlConnecting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:indeterminateTint="?attr/NAV_TP_color_normal"
+                    tools:targetApi="lollipop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_toEndOf="@+id/progressBar"
+                    android:text="@string/connecting"
+                    android:textColor="?attr/NAV_title_color"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.finogeeks.finochatapp.views.TabContainerView
+            android:id="@+id/tab_container"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/home_tab" />
+
+        <View
+            android:id="@+id/divider_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_above="@+id/tab_container"
+            android:background="#d5d5d5" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/home_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/divider_bottom"
+            android:layout_below="@+id/home_toolbar"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_drawer_view_container"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start" />
+</com.finogeeks.utility.views.FinDrawerLayout>

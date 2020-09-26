@@ -1,0 +1,127 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "28.0.3"
+    defaultConfig {
+        applicationId "com.finogeeks.finochatapp"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+        }
+
+        resConfigs "en", "zh-rCN"
+        manifestPlaceholders.put("network_security_config", "@xml/network_security_config")
+        manifestPlaceholders.put("app_icon", "@drawable/logo_r")
+
+        // Make sure this is consistent with the redirect URI used in res/raw/auth_config.json,
+        // or specify additional redirect URIs in AndroidManifest.xml
+        manifestPlaceholders = [
+                'finAuthHost'          : 'appauth.demo-app.io',
+                'finAuthPath'          : '/oauth2redirect',
+                'finAuthScheme'        : 'androidapp',
+                'appAuthRedirectScheme': 'net.openid.appauthdemo']
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk { abiFilters "x86", "armeabi", "armeabi-v7a" }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    packagingOptions {
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+
+        // The project react-native does not provide 64-bit binaries at the
+        // time of this writing. Unfortunately, packaging any 64-bit
+        // binaries into the .apk will crash the app at runtime on 64-bit
+        // platforms.
+        exclude '/lib/mips64/**'
+        exclude '/lib/arm64-v8a/**'
+        exclude '/lib/x86_64/**'
+        pickFirst '/lib/x86/libjsc.so'
+        pickFirst '/lib/armeabi-v7a/libjsc.so'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+
+    dexOptions {
+        preDexLibraries = false
+        keepRuntimeAnnotatedClasses false
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            // 构建APK名称样式：FinoChat_1.6.12_app_release.apk
+            def name = "FinoChat_${defaultConfig.versionName}_${variant.productFlavors[0].name}_${variant.buildType.name}.apk"
+            output.outputFileName = new File(name)
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        app {
+            dimension "default"
+            resValue "string", "app_name", "FinChat"
+            buildConfigField "String", "API", "\"https://chat.finogeeks.com\""
+            buildConfigField "String", "KEY", "\"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\""
+            buildConfigField "String", "AppType", "\"STAFF\""
+
+            buildConfigField "String", "wechatAppId", "\"wxba921605434e0281\""
+            buildConfigField "String", "qqAppId", "\"101698280\""
+            buildConfigField "String", "weiBoAppKey", "\"3957778627\""
+
+            resValue "string", "app_scheme", "finchat"
+            resValue "drawable", "app_icon", "@drawable/logo_r"
+
+            manifestPlaceholders.put("app_icon", "@drawable/logo_r")
+            manifestPlaceholders.put("amap_api_key", "489323b5eb9b9f9cab682904e4c97fcd")
+            manifestPlaceholders.put("network_security_config", "@xml/network_security_config_debug")
+            manifestPlaceholders.put("tencent_auth_scheme", "tencent101698280")
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+    implementation 'com.tencent.bugly:crashreport:3.1.0'
+
+    // 必选FinChatSDK组件
+    implementation "com.finogeeks.finochat.sdk:finochat-android-sdk:3.4.38"
+
+    // 可选音视频组件，非标准FinChatSDK组成部分
+    implementation("com.finogeeks.finochat.sdk:finovideochat:3.4.31")
+
+    // 可选OAuth登录授权组件，非标准FinChatSDK组成部分
+    implementation "com.finogeeks.finauth:FinAuth:0.2.5"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+repositories {
+    mavenCentral()
+}
